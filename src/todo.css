@@ -1,0 +1,79 @@
+.heading{
+    border-radius: 10px;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input_form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task_input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #6A5ACD;
+    border-radius: 5px;
+    background: #2A2A40;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.task_input::placeholder {
+    color: #8A8AB5;
+}
+
+.btn {
+    background: #6A5ACD;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #836FFF;
+}
+.btn i {
+    font-size: 18px;
+}
+
+#list{
+    width: 25%;
+}
+
+#list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2A2A40;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #6A5ACD;
+    
+}
+
+#list span{
+    font-size:1rem;
+    color: #9E78CF;
+}
+
+#list li button{
+    color:#6A5ACD;
+}
+
+
+#list li button:hover .fa-check {
+    color: #00FF00;
+}
+#list li button:hover .fa-trash {
+    color: #FF4500;
+}
