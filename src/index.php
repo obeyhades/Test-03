@@ -1,7 +1,11 @@
 <?php 
         require_once 'functions.php';
         require "sidebar.php";
-        require "todo.php";
+        
+        $category = null;
+        if (isset($_GET['category'])) {
+            $category = $_GET['category'];
+        }
     ?>
 
 <!DOCTYPE html>
@@ -13,6 +17,11 @@
     <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
-  
+    <h1>
+        <?php
+            echo $category;
+        ?>
+    </h1>
+   <?php require "todo.php";?>
 </body>
 </html>
