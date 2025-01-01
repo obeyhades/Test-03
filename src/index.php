@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require_once "functions.php";
 require "sidebar.php";
@@ -7,6 +8,17 @@ if (isset($_GET["category"])) {
     $category = $_GET["category"];
 }
 ?>
+=======
+<?php 
+        require_once 'functions.php';
+        require "sidebar.php";
+        
+        $category = null;
+        if (isset($_GET['category'])) {
+            $category = $_GET['category'];
+        }
+    ?>
+>>>>>>> e4e3b0ffd1d056348938a80ba81123d448ba1be1
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +31,21 @@ if (isset($_GET["category"])) {
 </head>
 
 <body>
+<<<<<<< HEAD
     <h1 class="h1">
         <?php
         echo $category;
         ?>
     </h1>
     <?php require "todo.php"; ?>
+=======
+    <h1>
+        <?php
+            echo $category;
+        ?>
+    </h1>
+   <?php require "todo.php";?>
+>>>>>>> e4e3b0ffd1d056348938a80ba81123d448ba1be1
 </body>
 
 </html>
