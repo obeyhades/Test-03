@@ -1,6 +1,8 @@
 <?php
+
 require_once "functions.php";
 require "If_function.php"
+
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,6 +13,7 @@ require "If_function.php"
         <!-- add task-->
     <form method="post" action="<?php echo ($url_params == "") ? "index.php?category=Daily" : "index.php?{$url_params}" ?>" class="input_form">
         <input type="text" name="task" placeholder="Add a new task" class="task_input" required>
+
         <button class="btn"><i class="fa fa-plus"></i></button>
     </form>
 

@@ -8,6 +8,7 @@ if (isset($_GET["category"])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +26,7 @@ if (isset($_GET["category"])) {
         ?>
     </h1>
     <?php require "todo.php"; ?>
+
 </body>
 
 </html>

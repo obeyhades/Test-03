@@ -8,6 +8,7 @@ function getTasks($conn, $category=null) {
         $sql = "SELECT * FROM Task WHERE category = '$category'";
     } else {
         // Otherwise, fetch all tasks from the 'Task' table
+
         $sql = "SELECT * FROM Task";
     }
     $stmt = $conn->prepare($sql);
@@ -74,6 +75,7 @@ function editTask($conn, $id, $newDescription) {
         echo "Error editing task: " . $e->getMessage();
     }
 }
+
 
 
 ?>
