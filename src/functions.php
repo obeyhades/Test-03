@@ -75,8 +75,5 @@ function editTask($conn, $id, $newDescription) {
         echo "Error editing task: " . $e->getMessage();
     }
 }
-
-
-
 ?>
 
