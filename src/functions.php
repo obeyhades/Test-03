@@ -15,17 +15,13 @@ function getTasks($conn, $category=null) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-<<<<<<< HEAD
 // Function to add a new task to the database
-=======
->>>>>>> e4e3b0ffd1d056348938a80ba81123d448ba1be1
 function addTask($taskDescription, $category="Daily") {
     global $conn;
     if (!$category){
         $category = "Daily";
     }
     $sql = "INSERT INTO Task (description, status, created_at, updated_at, category) 
-<<<<<<< HEAD
             VALUES (:description, 0, NOW(), NOW(),'$category')";
 
     $stmt = $conn->prepare($sql);
@@ -77,13 +73,6 @@ function editTask($conn, $id, $newDescription) {
     } catch (Exception $e) {
         echo "Error editing task: " . $e->getMessage();
     }
-=======
-            VALUES (:description, 0, NOW(), NOW(), '$category')";
-
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':description', $taskDescription);
-    $stmt->execute();
->>>>>>> e4e3b0ffd1d056348938a80ba81123d448ba1be1
 }
 
 

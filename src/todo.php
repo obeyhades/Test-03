@@ -1,36 +1,16 @@
 <?php
-<<<<<<< HEAD
 require_once "functions.php";
 require "If_function.php"
-=======
-require_once 'functions.php';
-
-
-if (isset($_POST['task'])) {
-    $taskDescription = $_POST['task'];
-    addTask($taskDescription, $category);
-}
-
-
-$tasks = getTasks($conn, $category);
-
-$url_params = $_SERVER['QUERY_STRING'];
->>>>>>> e4e3b0ffd1d056348938a80ba81123d448ba1be1
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="todo.css">
 
 <div class="heading">
-<<<<<<< HEAD
             
         <!-- add task-->
     <form method="post" action="<?php echo ($url_params == "") ? "index.php?category=Daily" : "index.php?{$url_params}" ?>" class="input_form">
         <input type="text" name="task" placeholder="Add a new task" class="task_input" required>
-=======
-    <form method="post" action="<?php echo ($url_params == "") ? "index.php?category=Daily" : "index.php?{$url_params}" ?>" class="input_form">
-        <input type="text" name="task" placeholder="Add a new task" class="task_input">
->>>>>>> e4e3b0ffd1d056348938a80ba81123d448ba1be1
         <button class="btn"><i class="fa fa-plus"></i></button>
     </form>
 
