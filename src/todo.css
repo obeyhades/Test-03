@@ -77,3 +77,10 @@
 #list li button:hover .fa-trash {
     color: #FF4500;
 }
+
+
+.buttonz {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}

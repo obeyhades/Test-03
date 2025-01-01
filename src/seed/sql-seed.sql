@@ -6,7 +6,7 @@ CREATE TABLE List (
 CREATE TABLE Task (
     id INT AUTO_INCREMENT PRIMARY KEY,
     description VARCHAR(255) NOT NULL,
-    status BIT(1),
+    status BIT(1) NOT NULL DEFAULT 0,
     deadline DATE,
     category VARCHAR(25),
     created_at DATETIME,

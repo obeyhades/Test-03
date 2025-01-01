@@ -17,9 +17,9 @@ services:
       MYSQL_PASSWORD: abdu
       MYSQL_DATABASE: todolist
       MARIADB_ROOT_PASSWORD: mariadb
-    ports:
-      - "3306:3306"
+
     volumes:
+      - ./src/seed:/docker-entrypoint-initdb.d
       - mariadb_data:/var/lib/mysql
 
   adminer:
