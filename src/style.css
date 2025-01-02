@@ -81,6 +81,8 @@ nav{
     z-index: 2;
     opacity: 0,5;
     transition: 0.5s all linear;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu li{
@@ -110,3 +112,4 @@ nav{
     display: flex;
     color: white
 }
+

@@ -11,7 +11,6 @@
             <li><form action="index.php" method="get"><button type="submit" name="category" value="Daily">Daily</button></form></li>
             <li><form action="index.php" method="get"><button type="submit" name="category" value="Work">Work</button></form></li>
             <li><form action="index.php" method="get"><button type="submit" name="category" value="Important">Important</button></form></li>
-            <li><form action="index.php" method="get"><button type="submit" name="category" value="Calender">Calender</button></form></li>
         </ul>
     </nav>
     
