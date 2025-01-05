@@ -10,8 +10,11 @@ function getTasks($conn, $category=null) {
         // Otherwise, fetch all tasks from the 'Task' table
         $sql = "SELECT * FROM Task";
     }
-    $stmt = $conn->prepare($sql);
+    //Prepares the SQL query stored in $sql for execution. This helps prevent SQL injection by using prepared statements.
+    $stmt = $conn->prepare($sql); 
+    //Executes the prepared SQL statement.
     $stmt->execute();
+    //Fetches all the rows from the executed query result as an associative array, where the column names are the keys. This array is then returned.
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -25,6 +28,7 @@ function addTask($taskDescription, $category="Daily") {
             VALUES (:description, 0, NOW(), NOW(),'$category')";
 
     $stmt = $conn->prepare($sql);
+    //The $stmt->bindParam method binds a parameter to the specified variable name in the SQL statement.
     $stmt->bindParam(":description", $taskDescription);
     $stmt->execute();
 }
