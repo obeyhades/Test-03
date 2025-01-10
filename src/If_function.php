@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 // Handle adding a new task
 if (isset($_POST["task"])) {
-    $taskDescription = $_POST["task"];
+    $taskDescription = htmlspecialchars($_POST["task"]);
     addTask($taskDescription, $category);
 }
 if (isset($_POST["status"])) {
