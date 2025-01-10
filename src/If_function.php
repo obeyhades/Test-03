@@ -38,4 +38,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $tasks = getTasks($conn, $category);
 
 $url_params = $_SERVER["QUERY_STRING"];
-?>

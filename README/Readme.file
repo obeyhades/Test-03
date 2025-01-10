@@ -8,3 +8,17 @@ The function of the list is as followed: The user needs to create a task. The ne
 
 
  While reading the code you will also see some comments where I describe what the code does/means and how I used it. 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+THE FOLLWING CODE IS RUN AND BY PSR12!
+
+HOW TO OPEN: 
+Step 1: The user need to install docker desktop. 
+Step 2: Open the terminal and typ "Docker compose up".
+Step 3: Open you're browser and typ "lokalhost".
+Step 4: Use the "todolist"
+
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Regarding the PSR 12 I know that I have some WARNINGS. The "A file should declare new symbols (classes, functions, constants, etc.) and cause no other side effects, or it should execute logic with side effects, but should not do both. The first symbol is defined on line 6 and
+    |         | the first side effect is on line 3" is an error im getting because of my "echo "Connection failed: " . $e->getMessage();" in my db.php.

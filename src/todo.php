@@ -18,7 +18,7 @@ require "If_function.php"
     </form>
 
     <ul id="list">
-        <?php foreach ($tasks as $task): ?>
+        <?php foreach ($tasks as $task) : ?>
             <li>
                 <span><?php echo htmlspecialchars($task["description"]); ?></span>
                 <div class="buttonz">
@@ -40,16 +40,14 @@ require "If_function.php"
                     </form>
 
                     <!--Edit-->
-                    <?php if (isset($_POST["edit"]) && $_POST["edit_id"] == $task["id"]): ?>
-                        
+                    <?php if (isset($_POST["edit"]) && $_POST["edit_id"] == $task["id"]) : ?>
                         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                             <input type="hidden" name="edit_id" value="<?= $task["id"] ?>">
                             <input type="text" name="edittask" placeholder="Ny beskrivning" required>
                             <button type="submit" name="save_edit" value="true">Spara</button>
                         </form>
 
-                    <?php else: ?>
-                       
+                    <?php else : ?>
                         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                             <input type="hidden" name="edit_id" value="<?= $task["id"] ?>">
                             <button title="edit" name="edit" value="true">

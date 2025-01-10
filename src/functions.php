@@ -1,52 +1,59 @@
 <?php
+
 require_once "db.php";
-    
+
 // Function to fetch tasks from the database
-function getTasks($conn, $category=null) {
+function getTasks($conn, $category = null)
+{
+
     //create an SQL query to fetch tasks with that category
     if ($category) {
         $sql = "SELECT * FROM Task WHERE category = '$category'";
     } else {
-        // Otherwise, fetch all tasks from the 'Task' table
+    // Otherwise, fetch all tasks from the 'Task' table
         $sql = "SELECT * FROM Task";
     }
     //Prepares the SQL query stored in $sql for execution. This helps prevent SQL injection by using prepared statements.
-    $stmt = $conn->prepare($sql); 
-    //Executes the prepared SQL statement.
+    $stmt = $conn->prepare($sql);
+//Executes the prepared SQL statement.
     $stmt->execute();
-    //Fetches all the rows from the executed query result as an associative array, where the column names are the keys. This array is then returned.
+//Fetches all the rows from the executed query result as an associative array, where the column names are the keys. This array is then returned.
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 // Function to add a new task to the database
-function addTask($taskDescription, $category="Daily") {
+function addTask($taskDescription, $category = "Daily")
+{
+
     global $conn;
-    if (!$category){
+    if (!$category) {
         $category = "Daily";
     }
     $sql = "INSERT INTO Task (description, status, created_at, updated_at, category) 
             VALUES (:description, 0, NOW(), NOW(),'$category')";
-
     $stmt = $conn->prepare($sql);
-    //The $stmt->bindParam method binds a parameter to the specified variable name in the SQL statement.
+//The $stmt->bindParam method binds a parameter to the specified variable name in the SQL statement.
     $stmt->bindParam(":description", $taskDescription);
     $stmt->execute();
 }
 
 // Function to handle marking a task as done or updating its status
-function taskdone() {
+function taskdone()
+{
+
      // Access the global database connection
     global $conn;
     if (isset($_POST["id"]) && isset($_POST["status"])) {
         $id = $_POST["id"];
-        $status = $_POST["status"];  
-
+        $status = $_POST["status"];
         updateTaskStatus($conn, $id, $status);
     }
 }
 
 // Function to update the status of a task in the database
-function updateTaskStatus($conn, $id, $status) {
+function updateTaskStatus($conn, $id, $status)
+{
+
     try {
         $stmt = $conn->prepare("UPDATE Task SET status = :status WHERE id = :id");
         $stmt->bindParam(":id", $id);
@@ -58,7 +65,9 @@ function updateTaskStatus($conn, $id, $status) {
 }
 
 // Function to delete the status of a task in the database
-function deleteTask($conn, $id) {
+function deleteTask($conn, $id)
+{
+
     try {
         $stmt = $conn->prepare("DELETE FROM Task WHERE id = :id");
         $stmt->bindParam(":id", $id, PDO::PARAM_INT);
@@ -68,7 +77,9 @@ function deleteTask($conn, $id) {
     }
 }
 // Function to edit the status of a task in the database
-function editTask($conn, $id, $newDescription) {
+function editTask($conn, $id, $newDescription)
+{
+
     try {
         $stmt = $conn->prepare("UPDATE Task SET description = :description, updated_at = NOW() WHERE id = :id");
         $stmt->bindParam(":id", $id, PDO::PARAM_INT);
@@ -78,5 +89,3 @@ function editTask($conn, $id, $newDescription) {
         echo "Error editing task: " . $e->getMessage();
     }
 }
-?>
-
